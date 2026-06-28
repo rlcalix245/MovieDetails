@@ -1,0 +1,12 @@
+services:
+  spark-lab:
+    image: quay.io/jupyter/pyspark-notebook:2024-03-14
+    container_name: spark-lab
+    ports:
+      - "8888:8888"
+      - "4040:4040"
+    volumes:
+      - "C:/MovieDetails:/home/jovyan/work"
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+    command: start-notebook.py --NotebookApp.token=''
